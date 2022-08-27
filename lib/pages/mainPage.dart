@@ -1,6 +1,14 @@
 import 'package:flutter/material.dart';
-class MainPage extends StatelessWidget {
+class MainPage extends StatefulWidget {
   const MainPage({Key? key}): super(key: key);
+
+  @override
+  State<MainPage> createState() => _MainPageState();
+}
+
+class _MainPageState extends State<MainPage> {
+
+  String? _dropDownText ;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,9 +42,19 @@ class MainPage extends StatelessWidget {
                    value: e,
                    child: Text(e));
               }).toList(),
-                hint: const Text('Select Something'),
-               onChanged: null,)
-              )],
+                hint: (_dropDownText == null) ? Text('Latest') : Text(_dropDownText!),
+               onChanged: (String? e) {
+                 if (e == 'Latest') {
+                   setState(() {
+                     _dropDownText = e;
+                   });
+                 } else {
+                   setState(() {
+                     _dropDownText = e;
+                   });
+                 }
+               }
+              ))]
           )
         ],
         )

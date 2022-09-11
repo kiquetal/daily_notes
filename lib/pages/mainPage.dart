@@ -136,7 +136,29 @@ class _MainPageState extends State<MainPage> {
             flex: 3,
             child: Container(
               color: Colors.blueGrey,
-              child: Column(),
+              child: Column(
+                children: [ Expanded(child:
+                Container(
+                  child: Column(
+                    children: [
+                      Expanded(child: ListView.builder(
+                          itemCount:5,
+                          itemBuilder: (context, index) {
+                      return SizedBox(width: MediaQuery.of(context).size.width*0.4,
+                         child: Card(
+                           elevation: 0,
+                           child:ListTile(
+                             title: const Text("Title"),
+                             subtitle: const Text("Subtitle"),
+                             trailing: IconButton(onPressed: () {}, icon: const Icon(Icons.delete)),
+                           )
+                         )
+                      );
+                      }))
+                    ],
+                  ),
+                ))],
+              ),
             ),
           )
         ],

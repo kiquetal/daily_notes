@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
       title: 'Diary Book',
       theme: ThemeData(
         visualDensity:VisualDensity.adaptivePlatformDensity,
-        primarySwatch: Colors.grey,
+        primarySwatch: Colors.green,
       ),
       home: const MainPage(),
     );

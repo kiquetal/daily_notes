@@ -101,33 +101,52 @@ class _MainPageState extends State<MainPage> {
                     width: 1,
                   ),
                 ),
-                )
-              ,
+              ),
               child: Column(
                 children: [
+
                   Padding(
                     padding: const EdgeInsets.all(38.0),
                     child: SfDateRangePicker(
-                      onSelectionChanged: (DateRangePickerSelectionChangedArgs e) {
+                      onSelectionChanged:
+                          (DateRangePickerSelectionChangedArgs e) {
                         print(e.value);
                       },
                     ),
-                  )
+                  ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Card(
+                      elevation: 4,
+                      child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: TextButton.icon(
+                        icon: const Icon(Icons.add),
+                        label: const Text("Add New Entry", style: TextStyle(fontSize: 15,
+                        color: Colors.blue),),
+                        onPressed: () {}),
+                    )
+                  ),
+                )
                 ],
               ),
             ),
-
           ),
-          Expanded(flex: 3,child:
-                  Container(
-                         color: Colors.blueGrey,
-                          child: Column(),
-
-                          ),
-
-               )
+          Expanded(
+            flex: 3,
+            child: Container(
+              color: Colors.blueGrey,
+              child: Column(),
+            ),
+          )
         ],
       ),
+    floatingActionButton: FloatingActionButton(
+      onPressed: () {},
+      tooltip: 'Add new info',
+      child: const Icon(Icons.add),
+    )
     );
+
   }
 }
